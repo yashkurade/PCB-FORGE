@@ -1,2 +1,3 @@
-# PCB-FORGE
-Turning old DVD motors and budget parts into a pro-grade CNC soldering machine — because innovation shouldn’t break the bank!
+# PCB F.O.R.G.E.  
+This is the official documentation and public-facing site for PCB F.O.R.G.E.  
+Stay tuned for updates!  
