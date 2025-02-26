@@ -4687,3 +4687,9 @@ input, select, textarea {
 		}
 
 	}
+
+.thin-text {
+    font-weight: 300; /* Slimmer text */
+    font-size: smaller; /* Optional: adjust size if needed */
+    letter-spacing: 1px; /* Optional: adds a subtle, spaced-out look */
+}
