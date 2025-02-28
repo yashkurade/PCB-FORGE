@@ -1,0 +1,6 @@
+X: 0.5821 inches, Y: 1.3333 inches
+X: 0.4795 inches, Y: 0.3333 inches
+X: 0.3821 inches, Y: 1.3333 inches
+X: 0.2795 inches, Y: 0.3333 inches
+X: 0.1821 inches, Y: 1.3333 inches
+X: 0.0000 inches, Y: 0.3333 inches

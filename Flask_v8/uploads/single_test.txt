@@ -1,0 +1,3 @@
+X: 0.2000 inches, Y: 0.0000 inches
+X: 0.3000 inches, Y: 0.3000 inches
+X: 0.0000 inches, Y: 0.0000 inches

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Negative</title>
+</head>
+<body>
+    <h1>Select an Image to Process</h1>
+    <form action="/process_negative" method="POST">
+        <label for="imageSelect">Select an Image:</label>
+        <select name="imageFile" id="imageSelect">
+            {% for image_filename in image_filenames %}
+                <option value="{{ image_filename }}">{{ image_filename }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Process Image">
+    </form>
+</body>
+</html>

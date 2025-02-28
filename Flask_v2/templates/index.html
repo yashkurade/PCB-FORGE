@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB_FORGE</title>
+    <style>from flask import Flask, render_template, request
+import subprocess
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/capture', methods=['POST'])
+def capture():
+    # Get the image name from the form submission
+    image_name = request.form['imageName']
+    # Run the capture_image.py script with the provided image name
+    subprocess.run(['python3', 'capture_image.py', image_name])
+    return 'Image captured and saved successfully!'
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-align: center; 
+        }
+        input[type="text"]::placeholder {
+            text-align: center; 
+        }
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Capture</h1>
+        <form action="/capture" method="post">
+            <input type="text" name="imageName" placeholder="Enter Image Name" required>
+            <button type="submit">Capture Image</button>
+        </form>
+        <br>
+        <!-- Additional input and button for detecting circle -->
+        <h1>Detect Circles</h1>
+        <div style="text-align: center;">
+        <form action="/detect_circle" method="post">
+            <select name="imagePath" required>
+                <!-- Use Flask to get the list of image filenames in the folder -->
+                {% for filename in image_filenames %}
+                    <option value="{{ filename }}">{{ filename }}</option>
+                {% endfor %}
+            </select>
+            <div class="submit-container">
+                <button type="submit">Detect Circle</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+

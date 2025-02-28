@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB_FORGE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        input[type="text"]::placeholder {
+            text-align: center;
+        }
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updateFormAction() {
+            const form = document.getElementById('detectForm');
+            const option = document.getElementById('padType').value;
+            if (option === 'circular') {
+                form.action = '/detect_circle';
+            } else if (option === 'rectangular') {
+                form.action = '/detect_rectangle';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Capture</h1>
+        <form action="/capture" method="post">
+            <input type="text" name="imageName" placeholder="Enter Image Name" required>
+            <button type="submit">Capture Image</button>
+        </form>
+        <br>
+        <!-- Additional input and button for detecting pads -->
+        <h1>Detect Pads</h1>
+        <div style="text-align: center;">
+        <form id="detectForm" method="post">
+            <select id="imagePath" name="imagePath" required>
+                <!-- Use Flask to get the list of image filenames in the folder -->
+                {% for filename in image_filenames %}
+                    <option value="{{ filename }}">{{ filename }}</option>
+                {% endfor %}
+            </select>
+            <select id="padType" name="padType" onchange="updateFormAction()" required>
+                <option value="" disabled selected>Select Pad Type</option>
+                <option value="circular">Circular Pads</option>
+                <option value="rectangular">Rectangular Pads</option>
+            </select>
+            <div class="submit-container">
+                <button type="submit">Detect</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
