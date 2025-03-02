@@ -18,7 +18,7 @@ This is **PCB F.O.R.G.E.** — For Opportunities Reviving Great Era. A cost-effe
 - Empowering small businesses and hobbyists with accessible tools.
 - Potential to expand into multi-functional PCB production.
 
-## Explore More 🚀
+## Explore More
 - **Official Website:** [PCB F.O.R.G.E. Webpage](https://yashkurade.github.io/PCB-FORGE/)
 - **Project Showcase Video:** [Watch on YouTube](https://youtu.be/6cLD23sZkp8?feature=shared)
 
