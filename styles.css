@@ -1,0 +1,155 @@
+/* Grayscale Theme */
+:root {
+  --dark-gray: #424242;
+  --light-gray: #FAFAFA;
+  --medium-gray: #686868;
+  --deep-gray: #292929;
+  --almost-black: #131313;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--almost-black);
+  color: var(--light-gray);
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-gray);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-gray);
+  padding: 10px 5%;
+}
+
+.title h1 {
+  font-size: 24px;
+}
+
+.title p {
+  font-size: 12px;
+  color: var(--medium-gray);
+}
+
+.social-icons img {
+  width: 30px;
+  margin-left: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  background-color: var(--deep-gray);
+  padding: 20px;
+  font-size: 18px;
+}
+
+.intro-text {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--light-gray);
+  line-height: 1.4;
+  margin: 20px 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-left: 4px solid var(--deep-gray);
+}
+
+
+/* Content Sections */
+.content {
+  position: relative;
+  padding: 50px 5%;
+  margin: 10px 0;
+  background-size: cover;
+  background-position: center;
+  color: var(--light-gray);
+  width: 90%; /* Or whatever fits your layout */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.content h2 {
+  position: absolute;
+  bottom: 50px;
+  left: 5%;
+  /*background-color: rgba(0, 0, 0, 0.6);*/
+  padding: 5px 0px;
+}
+
+.content p {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  color: var(--medium-gray);
+}
+
+/* 2x3 Grid Layout for Content Sections */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  padding: 0 5%;
+}
+
+.content-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-grid a:hover {
+  opacity: 0.9;
+  transform: scale(1.02); /* Optional zoom effect */
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-section {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-align: center;
+  margin: 0px 0;
+  padding: 0px;
+  background-color: #292929; /* A shade from your grayscale theme */
+  color: #FAFAFA;
+  font-size: 0.9rem;
+  font-style: italic;
+  border-top: 2px solid #292929;
+  border-bottom: 2px solid #303030;
+}
+
+/* Section Background Images */
+.background { background-image: url('images/bg.png'); }
+.assembly { background-image: url('images/assembly (2).png'); }
+.working { background-image: url('images/working.png'); }
+.result { background-image: url('images/result.png'); }
+.future { background-image: url('images/future.png'); }
+.creators-thought { background-image: url('images/thought.png'); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--dark-gray);
+  font-size: 14px;
+}

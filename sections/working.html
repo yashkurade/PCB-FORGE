@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB F.O.R.G.E.</title>
+    <link rel="stylesheet" href="styles_section.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="title">
+            <h1><a href="../index.html">PCB F.O.R.G.E.</a></h1>
+            <p>For Opportunities Reviving Great Era</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/yashkurade/PCB-FORGE"><img src="../images/github.png" alt="GitHub"></a>
+            <a href="../linkedin.html"><img src="../images/linkedin.png" alt="LinkedIn"></a>
+            <a href="../email.html"><img src="../images/gmail-logo.png" alt="Gmail"></a>
+        </div>
+    </header>
+
+    <section class="intro">
+        <p class="intro-text">
+            WORKING
+        </p>          
+    </section>
+
+    <!-- Content Section 1: Image Left, Text Right -->
+    <section class="content-section">
+        <img src="../images/smps.png" alt="Background Image 1">
+        <div class="text-content">
+            <h2>Booting Up the Machine</h2>
+            <p>
+                The first step in bringing PCB F.O.R.G.E. to life is getting it powered up — and yeah, it’s a bit like suiting up for a mission. We connect the 230V AC input to the SMPS, which steps it down to a stable 12V 5A supply for the motors and heating element. At the same time, the Raspberry Pi Zero W gets its juice from a 5V adapter — small but mighty, just like the Pi itself.
+
+                But here’s where the real magic starts: the moment the Pi boots up, it automatically launches app.py. We set this up by adding a line to the rc.local file, making sure the web interface is always ready the moment power flows. It’s like having JARVIS waiting for commands as soon as you enter the lab.
+
+                Once it’s up and running, we head over to the dashboard — a sleek web app hosted right on the Pi using Flask. From here, the control panel gives us three solid options:
+                <br>
+                &bull; Capture Image: Snap a real-life PCB image for solder pad detection.<br>
+                &bull; Upload Image: Use a softcopy PCB design from EagleCAD or similar software.<br>
+                &bull; Initiate Soldering: Once the coordinates are set, start the magic and watch the machine get to work.
+            </p>
+        </div>
+    </section>
+
+    <!-- Content Section 2: Text Left, Image Right -->
+    <section class="content-section reverse">
+        <img src="../images/pi_cam.png" alt="Background Image 2">
+        <div class="text-content">
+            <h2>The Heart of Automation: From Image to Soldering</h2>
+            <p>
+                When it’s time to bring a PCB design to life, our system makes it incredibly simple and efficient. If we select the "Capture Image" option, the Pi Cam v1.3 captures a real-life PCB image and sends it to the Raspberry Pi, where our custom-built machine learning model works its magic — detecting solder pads with precision. On the other hand, when we choose the "Upload Image" option, the green solder pads from a softcopy PCB, like those designed in EagleCAD, are identified using OpenCV. The coordinates of these pads are extracted and saved in a text file, following a structure similar to G-code. To take it a step further, we convert this text file into actual G-code using a custom Python script we developed. Once the prep work is done, it’s time for action. 
+                <br><br>
+                By selecting the "Initiate Soldering" option, we simply choose the required text file and click "Start Soldering" — from there, the Raspberry Pi takes over, sending precise instructions via GPIO pins to the CNC machine, moving the stepper motors and servo exactly as needed. Every movement and action is carefully orchestrated with Python and its powerful libraries, ensuring smooth and flawless operation every time.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+      <img src="../images/soldering_tip.png" alt="Background Image 1">
+      <div class="text-content">
+          <h2>The Art of Soldering</h2>
+          <p>
+            Soldering with PCB F.O.R.G.E. is a beautifully repetitive and precise sequence of actions — a perfect dance of mechanics and control. It starts with the X-axis moving into position, followed by the Y-axis, until the exact solder pad coordinates are reached. Once in place, the N20 motor feeder kicks in, pushing the solder wire toward the tip for just the right amount of time. To prevent the wire from being pushed away from the hot soldering tip, we regulate the N20’s RPM using a PWM controller — giving us fine control over the feeding speed. When the solder wire forms a perfect bulge, the MG90S servo takes over, gently lowering the entire solder pen holder so the heated tip makes contact with the PCB. The tip holds its position just long enough for the solder to melt and attach securely between the component pin and PCB pad. Once the joint is formed, the servo lifts the pen holder back up, and the machine moves on to the next soldering pad — repeating this delicate process with consistent precision.
+          </p>
+      </div>
+    </section>
+
+    <section class="content-section reverse">
+        <img src="../images/pwm_controller.png" alt="Background Image 2">
+        <div class="text-content">
+            <h2>The Lifesaver Moment</h2>
+            <p>
+                Every project has that one moment where things could either fall apart or come together — and for PCB F.O.R.G.E., this was it. The N20 motor, our solder wire feeder, was working… but working too well. Without any speed control, it pushed the solder wire at full speed, and the result was a mess — the wire kept sliding over the soldering tip, never staying long enough to melt. At first, we couldn’t figure out why the wire wasn’t sticking, and the whole project felt like it was on the verge of failure. Then it hit us — the 5W soldering pen needed time to heat the wire properly. That’s when we came up with the idea of adding a PWM controller to regulate the N20’s speed. And just like that, everything fell into place. Slowing down the feeder meant the wire stayed perfectly in contact with the tip long enough to melt and form a solid joint. It was one of those breakthrough moments that kept this entire project alive — and it worked like an absolute dream.
+            </p>
+        </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="assembly.html" class="btn">Previous</a>
+        <a href="result.html" class="btn">Next</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PCB F.O.R.G.E. | Major Project | Electronics Department VESIT</p>
+    </footer>
+</body>
+</html>
