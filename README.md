@@ -16,7 +16,7 @@ This is **PCB F.O.R.G.E.** — For Opportunities Reviving Great Era. A cost-effe
 - Professional-grade PCB manufacturing at a fraction of the cost.
 - Simplified soldering process with automated precision.
 - Empowering small businesses and hobbyists with accessible tools.
-- Potential to expand into multi-functional PCB production.
+- Potential to expand into multi-functional PCB production. 
 
 ## Explore More
 - **Official Website:** [PCB F.O.R.G.E. Webpage](https://yashkurade.github.io/PCB-FORGE/)
